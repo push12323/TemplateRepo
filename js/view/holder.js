@@ -51,6 +51,8 @@ function loadContentEngine()
 function loadQuizEngine()
 {
     qEngine = new quizEngine(["quiz_1.js", "quiz_2.js", "quiz_3.js", "quiz_4.js", "result.js"]);    
+	
+	insertStyle("css/quiz.css");
 }
 
 function insertScript(script, status) {

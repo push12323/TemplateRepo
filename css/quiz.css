@@ -1,0 +1,47 @@
+@charset "utf-8";
+/* CSS Document */
+
+.ui-controlgroup-label
+{
+	width:50%;
+	font-size:24px;
+	text-align:left;
+	text-shadow:0 1px 0 #000000;
+}
+
+.ui-block-b
+{
+	width:150px;
+}
+
+h2
+{
+	font-size:24px;
+	text-align:left;
+	text-shadow:0 1px 0 #000000;
+}
+
+li img
+{
+	text-align:center;
+}
+
+.ui-radio-on{
+	-webkit-transition: all 1s ease-in-out;
+	  -moz-transition: all 1s ease-in-out;
+	  -o-transition: all 1s ease-in-out;
+	  transition: all 1s ease-in-out;
+	background:#6CF;
+}
+
+.listItem-selected{
+	-webkit-transition: all 1s ease-in-out;
+	  -moz-transition: all 1s ease-in-out;
+	  -o-transition: all 1s ease-in-out;
+	  transition: all 1s ease-in-out;
+	background:#46a546;
+}
+
+.listItem-wrong{
+	background:#9d261d;
+}
