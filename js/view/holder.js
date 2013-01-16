@@ -36,6 +36,7 @@ function gotoMyBookScreen()
 {
     headerDiv.addHomeButton();
     loadPage("js/view/my_books.js");
+	insertStyle("css/my_books.css");
 }
 
 function gotoBookMenu()

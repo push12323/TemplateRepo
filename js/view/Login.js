@@ -7,7 +7,9 @@ function createLoginView()
 {
     console.log("createLoginView"); 
     $("#appContainer").append("<div id='loginCont'/>");
+	$("#loginCont").css("width", "40%");
     $("#loginCont").css("height", "100%");
+	$("#loginCont").css("margin", "auto");
     $("#loginCont").css("backgroundColor", "gray");
     $("#loginCont").css("color", "white");
     //$('#loginCont').css('textShadow','black 1px 1px 1px');

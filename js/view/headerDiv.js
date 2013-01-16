@@ -16,6 +16,10 @@ function headerDiv(d)
         
         var settingBtn = $("<div class='topNavigation'><button data-role='button' id='headerSetting' data-inline='true'>Settings</button></div>");
         d.append(settingBtn);
+		
+		var audioBtn = $("<div class='topNavigation'><button data-role='button' id='audioSetting' data-inline='true'>Audio</button></div>");
+        d.append(audioBtn);
+		
         d.trigger("create");
         
         this.addEventListeners();
@@ -24,6 +28,7 @@ function headerDiv(d)
     {
         $("#headerHelp").on("tap", this.headerHelpTap);
         $("#headerSetting").on("tap", this.headerSettingTap);
+		$("#audioSetting").on("tap", this.audioToggleTap);
     }
     this.addHomeButton = function()
     {
@@ -43,6 +48,28 @@ function headerDiv(d)
     {
         addPopup("js/view/settings_popup.js");
     }
+	this.audioToggleTap = function()
+	{
+		/*var audio = $('audio');
+		if(audio.muted){
+            song.play();
+         } else {
+             song.pause();
+         }
+		$('audio')[2].volume=0;
+		console.log($('audio')[2].volume);*/
+		
+		/*$('#soundonoff').on('click', function () {
+			var $this = $(this);
+			if ($this.attr('src') == 'images/icons/soundon.png') {
+				$this.attr('src', 'images/icons/soundoff.png').attr('data-muted', true);
+			} else {
+				$this.attr('src', 'images/icons/soundon.png').attr('data-muted', false);
+			}
+		});*/
+	}
+	
+	
     this.createHeader();
 }
 

@@ -1,0 +1,63 @@
+@charset "utf-8";
+
+
+/* Swiper cArousel*/
+.swiper-car {
+	margin-bottom:30px;
+}
+.swiper-car, .swiper-car .swiper-slide {
+	width:890px;
+	height:590px;
+	color:#fff;
+	
+	text-align:left;
+}
+.slide-disable{
+	opacity:0.3;
+}
+.pagination-car {
+    left: 10px;
+    top: 595px;
+    width: 160px;
+	position:absolute;
+	z-index:20;
+}
+.pagination-car .swiper-pagination-switch {
+    background: none repeat scroll 0 0 #555555;
+    border: 1px solid #FFFFFF;
+    border-radius: 8px 8px 8px 8px;
+    display: block;
+    height: 8px;
+    margin: 0 5px;
+    opacity: 0.8;
+    width: 8px;
+    float: left;
+}
+.pagination-car .swiper-active-switch {
+    background: none repeat scroll 0 0 #FFFFFF;
+}
+
+.book-content{
+	width:180px;
+}
+
+.book-content img{
+	color:#000;
+	text-align:left;
+}
+
+.book-content h3{
+	color:#000;
+	text-align:left;
+	font-size: 25px;
+	font-weight:normal;
+	text-shadow:none;
+}
+
+.book-content p{
+	color:#000;
+	text-align:left;
+	font-size: 14px;
+	font-weight:normal;
+	text-shadow:none;
+}

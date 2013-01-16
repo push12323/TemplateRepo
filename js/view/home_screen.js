@@ -12,7 +12,7 @@ function createHomeScreen()
     $("#loginCont").css("color", "white");
     //$('#loginCont').css('textShadow','black 1px 1px 1px');
     $('#loginCont').css('textAlign','center');
-    $("#loginCont").append("<div id='formCont' style='display:inline-block; margin-top:70px; width:300px;'/>");
+    $("#loginCont").append("<div id='formCont' style='display:inline-block; margin-top:70px; width:1024px;'/>");
     $("#formCont").append("<span>This is Home screen</span><br/><br/>");
     $("#formCont").append("<button data-role='button' data-inline='true' id='home_books' value='My Books'/>");
     $("#formCont").append("<button data-role='button' data-inline='true' id='home_score' value='My Score'/>");
