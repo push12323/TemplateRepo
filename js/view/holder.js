@@ -34,7 +34,7 @@ function gotoHomeScreen()
 
 function gotoMyBookScreen()
 {
-    headerDiv.addHomeButton();
+    headerDiv.createButtons();
     loadPage("js/view/my_books.js");
 	insertStyle("css/my_books.css");
 }
@@ -42,6 +42,7 @@ function gotoMyBookScreen()
 function gotoBookMenu()
 {
     loadPage("js/view/book_menu.js");
+	insertStyle("css/book_menu.css");
 }
 
 function loadContentEngine()

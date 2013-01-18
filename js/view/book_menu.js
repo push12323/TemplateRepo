@@ -12,12 +12,22 @@ function createBookMenu()
     $("#bookMenuCont").css("color", "white");
     //$('#bookMenuCont').css('textShadow','black 1px 1px 1px');
     $('#bookMenuCont').css('textAlign','center');
-    $("#bookMenuCont").append("<div id='formCont' style='display:inline-block; margin-top:70px; width:300px;'/>");
-    $("#formCont").append("<span>This is Home screen</span><br/><br/>");
+    $("#bookMenuCont").append("<div id='formCont' style='display:inline-block; width:930px; padding-left:40px;'/>");
+	
+	$("#formCont").append("<div class='book-desc'><div class='book-cover'><img src='assets/images/theme1/book1_stage1.png'  onClick='onBookClick()' /></div><div class='book-content'><h3>Interactive Science</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent tincidunt mi vel lectus sodales consequat. Quisque vitae ipsum lacus, et molestie erat. Ut rhoncus nisl in nisl bibendum non commodo ligula semper. Aenean erat nunc, ultricies eget bibendum nec, tincidunt ut risus. Etiam scelerisque, massa a fringilla aliquam, libero quam viverra justo, quis consectetur orci dui sit amet metus. </p></div></div>");
+	
+	$("#formCont").append("<div data-role='collapsible-set'><div data-role='collapsible'><h3>Header</h3><p>Content</p></div><div data-role='collapsible' data-collapsed='true'><h3>Header</h3><p>Content</p></div><div data-role='collapsible' data-collapsed='true'><h3>Header</h3><p>Content</p></div></div>");
+	
+	$("#formCont").append("<div class='swiper-container swiper-scroll-container' />");
+    $(".swiper-car").append("<div class='pagination-car'></div>");
+    $(".swiper-car").append("<div class='swiper-wrapper' />");
+	
+	
+    /*$("#formCont").append("<span>This is Home screen</span><br/><br/>");
     $("#formCont").append("<button data-role='button' id='bMenu_content' value='Content'/>");
     $("#formCont").append("<button data-role='button' id='bMenu_acivity' value='Activity'/>");
     $("#formCont").append("<button data-role='button' id='bMenu_quiz' value='Quiz'/>");
-    $("#formCont").append("<button data-role='button' id='bMenu_games' value='Games'/>");
+    $("#formCont").append("<button data-role='button' id='bMenu_games' value='Games'/>");*/
     $("#bookMenuCont").trigger("create");
     
     addEventListeners();

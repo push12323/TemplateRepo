@@ -6,19 +6,48 @@ function headerDiv(d)
     this.createHeader = function()
     {
         d.addClass("headerDiv");
-        this.createButtons();
+        //this.createButtons();
     }
     
     this.createButtons = function()
     {
-        var helpBtn = $("<div class='topNavigation'><button data-role='button' id='headerHelp' data-inline='true'>Help</button></div>");
-        d.append(helpBtn);
-        
-        var settingBtn = $("<div class='topNavigation'><button data-role='button' id='headerSetting' data-inline='true'>Settings</button></div>");
-        d.append(settingBtn);
+        d.append($("<div id='hContainer' style='display:inline-block;'/>"));
+        var mToggle = $("<div class='menuToggle'></div>");
+        $("#hContainer").append(mToggle);
 		
-		var audioBtn = $("<div class='topNavigation'><button data-role='button' id='audioSetting' data-inline='true'>Audio</button></div>");
-        d.append(audioBtn);
+		var mIcon = $("<div class='menuIcon'>MENU ></div>");
+        $(".menuToggle").append(mIcon);
+		
+		var appNav = $("<div class='appNavigation'/>");
+		$(".menuToggle").append(appNav);
+        
+        
+        var bBtn = $("<div><img src='assets/images/theme1/icon1.png'/></div>")
+		$(".appNavigation").append(bBtn);
+		var bBtn = $("<div><img src='assets/images/theme1/icon2.png'/></div>")
+        $(".appNavigation").append(bBtn);
+        var bBtn = $("<div><img src='assets/images/theme1/icon3.png'/></div>")
+        $(".appNavigation").append(bBtn);
+        var bBtn = $("<div><img src='assets/images/theme1/icon4.png'/></div>")
+        $(".appNavigation").append(bBtn);
+        var bBtn = $("<div><img src='assets/images/theme1/icon5.png'/></div>")
+        $(".appNavigation").append(bBtn);
+		
+		var vBtn = $("<div class='headerViewNav'/>");
+        $("#hContainer").append(vBtn);
+        var bBtn = $("<div><img src='assets/images/theme1/icon6.png'/></div>")
+        $(".headerViewNav").append(bBtn);
+        var bBtn = $("<div><img src='assets/images/theme1/icon7.png'/></div>")
+        $(".headerViewNav").append(bBtn);
+        
+        var leftBts = $("<div class='headerLeftNav'/>");
+        $("#hContainer").append(leftBts);
+        var bBtn = $("<div><img src='assets/images/theme1/icon8.png'/></div>")
+        $(".headerLeftNav").append(bBtn);
+        var bBtn = $("<div><img src='assets/images/theme1/icon9.png'/></div>")
+        $(".headerLeftNav").append(bBtn);
+        var bBtn = $("<div><img src='assets/images/theme1/icon10.png'/></div>")
+        $(".headerLeftNav").append(bBtn);
 		
         d.trigger("create");
         
@@ -29,6 +58,7 @@ function headerDiv(d)
         $("#headerHelp").on("tap", this.headerHelpTap);
         $("#headerSetting").on("tap", this.headerSettingTap);
 		$("#audioSetting").on("tap", this.audioToggleTap);
+		$(".menuIcon").on("tap", this.menuToggleTap);
     }
     this.addHomeButton = function()
     {
@@ -41,13 +71,19 @@ function headerDiv(d)
         $("#headerDivHome").remove();
     }
     this.headerHelpTap = function () {
-        console.log("headerHelpTap");
+        
         addPopup("js/view/help_popup.js");
     }
     this.headerSettingTap = function()
     {
         addPopup("js/view/settings_popup.js");
     }
+	this.menuToggleTap = function()
+	{
+		//console.log("menuToggleTap");
+		$(".appNavigation").animate({width:'toggle'},312);
+        $(this).toggleClass("closed"); 
+	}
 	this.audioToggleTap = function()
 	{
 		/*var audio = $('audio');

@@ -1,0 +1,16 @@
+@charset "utf-8";
+
+.ui-collapsible-content {
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -ms-transition: all 1s;
+    -o-transition: all 1s;
+    transition: all 1s;
+    height: 2em; /* or auto */
+    overflow: hidden;
+}
+.ui-collapsible-content-collapsed {
+    display: block;
+    height: 0;
+    padding: 0 16px;
+}
