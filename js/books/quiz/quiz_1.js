@@ -29,7 +29,7 @@ function createFirstQuestion()
 	$("#formCont").append("<div id='right' data-role='popup' data-theme='e' data-overlay-theme='a' class='ui-content'> Wrong Answer </div>")
 	$("#formCont").append("<div id='selectans' data-role='popup' data-theme='e' data-overlay-theme='a' class='ui-content'> Please Select Answer </div>")
 	
-	
+	checkFileLocation();
 	
     $("#loginCont").trigger("create");
 	
@@ -41,9 +41,29 @@ function createFirstQuestion()
 	audio.play();
 }*/
 
+function checkFileLocation()
+{
+	window.requestFileSystem  = window.requestFileSystem || window.webkitRequestFileSystem;
+    window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
+}
+
+function fail() {
+	alert("failed to get filesystem");
+}
+
+function gotFS(fileSystem) {
+	alert("got filesystem");
+
+		// save the file system for later access
+	alert(fileSystem.root.fullPath);
+	window.rootFS = fileSystem.root;
+}
+
 function playSound(src) {
 	if (device.platform == 'Android') {
+		alert(src);
 		src = '/android_asset/www/' + src;
+		
 	}
 
 	var media = new Media(src, success, error_error);
