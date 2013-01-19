@@ -22,7 +22,7 @@ function createBookMenu()
     $(".swiper-car").append("<div class='pagination-car'></div>");
     $(".swiper-car").append("<div class='swiper-wrapper' />");
 	
-	
+	$("#formCont").append("<button data-role='button' id='bMenu_quiz' value='Quiz'/>");
     /*$("#formCont").append("<span>This is Home screen</span><br/><br/>");
     $("#formCont").append("<button data-role='button' id='bMenu_content' value='Content'/>");
     $("#formCont").append("<button data-role='button' id='bMenu_acivity' value='Activity'/>");
