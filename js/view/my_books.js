@@ -11,7 +11,7 @@ function createMyBookScreen()
     $("#myBookCont").css("color", "white");
     //$('#myBookCont').css('textShadow','black 1px 1px 1px');
     $('#myBookCont').css('textAlign','center');
-    $("#myBookCont").append("<div id='formCont' style='display:inline-block; width:930px; height:590px;'/>");
+    $("#myBookCont").append("<div id='formCont' style='display:inline-block; width:930px; height:580px;'/>");
 	
 	
 	$("#formCont").append("<div class='swiper-container swiper-scroll-container' />");
@@ -38,7 +38,8 @@ function createMyBookScreen()
 	var sScroll = $('.swiper-scroll-container').swiper({
 		scrollContainer : true,
 		scrollbar : {
-			container : '.swiper-scrollbar'	
+			container : '.swiper-scrollbar'	,
+			hide: false
 		}
 	})
 	
