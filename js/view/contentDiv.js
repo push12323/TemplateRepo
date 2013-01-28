@@ -61,7 +61,7 @@ function createSwiperDivs(ref)
     $("#pPageSwipe").append("<div id='pSwiper' style='display:inline-block; width:900px;'/>");
 	
 	$("#pSwiper").append("<div class='swiper-container' />");
-	$(".swiper-container").css("height", "590px");
+	$(".swiper-container").css("height", "580px");
 	$(".swiper-container").css("width", "100%");
     $(".swiper-container").append("<div class='swiper-wrapper' />");
 	$(".swiper-wrapper").append("<div class='swiper-slide'><div id='1'>Windows 7</div></div><div class='swiper-slide'><div id='2'>Windows Vista</div></div><div class='swiper-slide'><div id='3'>Windows XP</div></div>");
