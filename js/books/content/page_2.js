@@ -1,18 +1,23 @@
 /**
  * @author prashant.raut
  */
-createFirstQuestion();
+page_2();;
 
-function createFirstQuestion()
+function page_2()
 {
-    console.log("createFirstQuestion"); 
-    $("#appContainer").append("<div id='pageCont'/>");
-    $("#pageCont").css("height", "100%");
-    $("#pageCont").css("backgroundColor", "gray");
-    $("#pageCont").css("color", "white");
-    //$('#pageCont').css('textShadow','black 1px 1px 1px');
-    $('#pageCont').css('textAlign','center');
-    $("#pageCont").append("<div id='formCont' style='display:inline-block; margin-top:20px; width:350px;'/>");
-    $("#formCont").append("<h2>Prototype-based programming</h2><br/>Prototype-based programming is a style of object-oriented programming in which classes are not present, and behavior reuse (known as inheritance in class-based languages) is accomplished through a process of decorating existing objects which serve as prototypes. This model is also known as class-less, prototype-oriented, or instance-based programming. The original (and most canonical) example of a prototype-based language is the programming language Self developed by David Ungar and Randall Smith. However, the class-less programming style has recently grown increasingly popular, and has been adopted for programming languages such as JavaScript, Cecil, NewtonScript, Io, MOO, REBOL, Kevo, Squeak (when using the Viewer framework to manipulate Morphic components), and several others<br/>");
-    $("#pageCont").trigger("create");
+	var attachTo = currentId + 1;
+	$("#"+attachTo).empty();
+    console.log("create2Question "+currentId); 
+	var first_id = "loginCont"+attachTo;
+	var second_id = "formCont"+attachTo;
+	var third_id = "fieldset"+attachTo;
+    $("#"+attachTo).append("<div id='"+first_id+"'/>");
+    $("#"+first_id).css("height", "100%");
+	
+    $("#"+first_id).css('textAlign','center');
+	$('.ui-controlgroup-label').css('font-size','18px')
+    $("#"+first_id).append("<div id='"+second_id+"' style='display:inline-block; width:80%;'/>");
+    $("#"+second_id).append("<span>This is Second Page</span><br/><br/>Yesterday I ended up having to hack around FCKEditor a bit to “fine tune” it for a project im involved in. The problem was that the html text we needed from the editor was getting back to our app, I didnt touch the code at all except to add a console log (window.console.log()) and tada… it works now. Well it was aparent that the fckeditor was not getting to where i needed to get to fast enough. Javascript has a method setTimeout, which if you google this, youll find a bunch of related topics on setTimeout, setInterval, and clearTimeout etc… So I went with a setTimeout to simply call the next function i needed 1 millisecond later.");
+	
+	$("#"+first_id).trigger("create");
 }

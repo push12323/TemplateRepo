@@ -11,30 +11,18 @@ function footerDiv(d)
     this.setFooterDimentions = function(h)
     {
         d.css("height", h+"px");
-        contentDiv.setContentDimentions();
+        //contentDiv.setContentDimentions();
         
-    }
-    this.addNavigation = function(ref)
-    {
-        console.log("addQuizNavigation");
-        this.engineRef = ref;
-        this.setFooterDimentions(60);
-        
-        var prevBtn = $("<div style='float:left;'><button id='quizPrevBtn' data-role='button' data-inline='true' onclick='footerDiv.onQuizPrevClick()'>Previous</button></div>");
-        d.append(prevBtn);
-        
-        var nextBtn = $("<div style='float:right;'><button id='quizNextBtn' data-role='button' data-inline='true' onclick='footerDiv.onQuizNextClick()'>Next</button></div>");
-        d.append(nextBtn);
-        d.trigger("create");
-    }
-    
+    }   
     this.onQuizPrevClick = function()
     {
-        this.engineRef.loadPreviousPage();
+        swipeToPrevPg();
+		console.log("onQuizPrevClick");
     }
     this.onQuizNextClick = function()
     {
-        this.engineRef.loadNextPage();
+        swipeToNextPg();
+		console.log("onQuizNextClick");
     }
     this.enableNextBtn = function(bool)
     {
@@ -58,10 +46,21 @@ function footerDiv(d)
             $("#quizPrevBtn").button("disable");
         }
     }
+	this.addContentNavigation = function()
+	{
+		d.empty();
+		this.setFooterDimentions(document.body.clientHeight-parseInt($("#appHeader").css("height")))+"px";
+		var prevBtn = $("<div style='float:left;background-color:#5E97C7;height:100%;width:50px;color:black;' onclick='footerDiv.onQuizPrevClick()'>></div>");
+        d.append(prevBtn);
+        
+        var nextBtn = $("<div style='float:right;background-color:#5E97C7;height:100%;width:50px;color:black;' onclick='footerDiv.onQuizNextClick()'><</div>");
+        d.append(nextBtn);
+        d.trigger("create");
+	}
     this.emptyFooter = function()
     {
         d.empty();
-        this.setFooterDimentions(20);
+        this.setFooterDimentions(0);
     }
     this.createFooterDiv();
 }

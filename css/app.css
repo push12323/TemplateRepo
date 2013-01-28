@@ -9,6 +9,7 @@
 	width: 100%;
 	height:60px;
 	text-align: center;
+	position: relative;
 }
 .topNavigation
 {
@@ -19,53 +20,86 @@
 	background-image: url(../assets/images/theme1/btn_bg1.png);
 	background-repeat: no-repeat;
 	width: 486px;
-	height: 60px;
+	height: 62px;
 	color: black;
-	padding-top: 20px;
 	float: left;
+	
 }
 .menuIcon{
+	width:65px;
 	float: left;
-	margin:0 0 0 40px;
-	border:2px solid red;
+	margin:0;
+	padding:15px 0 0 0;
 }
 .menuIcon.closed{
 	float: left;
-	margin:0 0 0 40px;
-	border:2px solid green;
+	margin:0;
+}
+.mask-div{
+	width: 421px;
+	height: 62px;
+	margin-left:65px;
+	overflow:hidden;
 }
 .appNavigation
 {
 	background-image: url(../assets/images/theme1/btn_bg2.png);
 	background-repeat: no-repeat;
-	width: 312px;
+	width: 298px;
 	height: 60px;
-	margin-left: 20px;
-	margin-top: -20px;
+	margin-left: 0px;
 	float: left;
+	overflow: hidden;
 }
-.appNavigation div
+.appNavigation .nav
 {
+	width:59.5px;
+	height:62px;
 	float:left;
-	padding-left: 26px;
-	padding-top: 15px;
-	padding-right: 9px;
 }
-.headerViewNav div
+.appNavigation .active 
 {
-	float:left;
-	padding-left: 26px;
-	padding-top: 20px;
-	padding-right: 16px;
+	/*width:57px;
+	height:57px;*/
+	background-color:#FFF;
 }
+.appNavigation .disable 
+{
+	opacity:0.5;
+}
+.appNavigation .nav img
+{
+	padding-top:15px;
+}
+
 .headerViewNav
 {
 	background-image: url(../assets/images/theme1/btn_bg3.png);
 	background-repeat: no-repeat;
 	width: 126px;
 	height: 63px;
-	margin-left: 40px;
+	padding-left:6px;
 	float: left;
+}
+.headerViewNav .nav
+{
+	width:60px;
+	height:62px;
+	float:left;
+}
+.headerViewNav .active 
+{
+	width:55px;
+	height:58px;
+	background-color:#FFF;
+}
+.headerViewNav .disable 
+{
+	opacity:0.5;
+}
+.headerViewNav .nav img
+{
+	padding-top:20px;
 }
 .headerLeftNav
 {
@@ -73,20 +107,97 @@
 	background-repeat: no-repeat;
 	width: 186px;
 	height: 61px;
-	margin-left: 40px;
+	margin-left: 80px;
+	padding-left:2px;
 	float: left;
 }
-.headerLeftNav div
+.headerLeftNav .nav
 {
+	width:60px;
+	height:62px;
 	float:left;
-	padding-left: 20px;
-	padding-top: 16px;
-	padding-right: 12px;
+}
+.headerLeftNav .active 
+{
+	width:55px;
+	height:58px;
+	background-color:#FFF;
+}
+.headerLeftNav .disable 
+{
+	opacity:0.5;
+}
+.headerLeftNav .nav img
+{
+	padding-top:15px;
+}
+.bookNavigation
+{
+	display:inline-block;
+	margin-top:1px;
 }
 
+.bookNavigation .studyActive
+{
+	width:67px;
+	height:52px;
+	background-image:url(../assets/images/theme1/study_clicked.png);
+}
+.bookNavigation .studyNormal
+{
+	width:67px;
+	height:41px;
+	background-image:url(../assets/images/theme1/study.png);
+}
+.bookNavigation .gameActive
+{
+	width:67px;
+	height:52px;
+	background-image:url(../assets/images/theme1/game_clicked.png);
+}
+.bookNavigation .gameNormal
+{
+	width:67px;
+	height:41px;
+	background-image:url(../assets/images/theme1/game.png);
+}
+.bookNavigation .quizActive
+{
+	width:67px;
+	height:52px;
+	background-image:url(../assets/images/theme1/quiz_clicked.png);
+}
+.bookNavigation .quizNormal
+{
+	width:67px;
+	height:41px;
+	background-image:url(../assets/images/theme1/quiz.png);
+}
+.bookNavigation div
+{
+	float:left;
+	margin-left:5px;
+}
+.contentNavigation
+{
+	height:45px;
+	background-color:white;
+	-moz-box-shadow: 5px 5px 2px #888;
+	-webkit-box-shadow: 5px 5px 2px #888;
+	box-shadow: 5px 5px 2px #888;
+	text-align:left;
+}
+.headeWhiteBg
+{
+	background-color:white;
+	-moz-box-shadow: 5px 5px 2px #888;
+	-webkit-box-shadow: 5px 5px 2px #888;
+	box-shadow: 5px 5px 2px #888;
+	text-align:left;
+}
 .contentDiv
 {
-	height: 100%;
+	/*height: 100%;*/
     padding-bottom: 60px;
     padding-top: 50px;
 }

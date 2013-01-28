@@ -1,16 +1,208 @@
-@charset "utf-8";
+/* Swiper CSS */
+
+/* Specify Swiper's Size: */
+.swiper-container, .swiper-slide {
+	width: 100%;
+	height: 590px;
+}
+
+/* Specify Verticle Swiper's Size: */
+.verticle, .verticle .swiper-slide {
+	width: 655px;
+	height: 100%;
+}
+
+
+/* Specify Vertical Scroller Size: 
+.swiper-scrollbar-n2 {
+	width: 80%;
+	height: 8px;
+	border-radius: 10px;
+	margin: 10px auto;
+	position: relative;
+	-ms-touch-action: none;
+	background: rgba(0,0,0,0.3);
+	position:absolute;
+	right:3px;
+	top:0;
+	height:80%;
+	width:5px;
+}
+
+.swiper-scrollbar-n2{background: rgba(0,0,0,0.3);;position:absolute;right:3px;top:0;height:100%;width:5px;}
+.swiper-scrollbar-n2 .swiper-scrollbar-drag{background:rgba(255,255,0,0.3);}
+*/
+
+.slide-disable{
+	opacity:0.3;
+}
+
+.book-cover{
+	float:left;
+	text-align:center;
+}
+
+.book-content{
+	float:left;
+	width:175px;
+}
+
+.book-content h3{
+	color:#000;
+	text-align:left;
+	font-size: 25px;
+	font-weight:normal;
+	text-shadow:none;
+	margin-bottom:0;
+	width:100%;
+}
+
+.book-content p{
+	color:#000;
+	text-align:left;
+	font-size: 12px;
+	font-weight:normal;
+	text-shadow:none;
+	margin:0;
+}
+
+.book-ratings{
+	width:80%;
+	float:left;
+}
+
+.book-info{
+	width:230px;
+	float:left;
+}
+
+
+.book-chapters{
+	width:600px;
+	float:left;
+}
+
+.chapter-list{
+	width:300px;
+	float:left;
+}
+
+.sb1,.sb2,.sb3{height:10px;margin:20px 0}.sb4{position:absolute;left:2%;bottom:10px;width:96%;height:5px;background:red;}.sb4 .swiper-scrollbar-drag{background:yellow;}.vertical{background:none;}.vertical,.vertical .swiper-slide{width:655px;height:100%;}.dummy-page{padding-left:0px;}.dummy-title{font-size:18px;margin-bottom:15px;}.sb5{background:none;position:absolute;float:right;right:-1px;top:0;height:100%;width:5px;}.sb5 .swiper-scrollbar-drag{background:rgba(0,0,0,0.7);}.sb2 .swiper-scrollbar-drag{width:50px!important;}
+
+
+.book-ratings{
+	width:175px;
+	height:35px;
+	float:left;
+	margin:10px 0 0 0;
+	background-image: url('../assets/images/theme1/rating_bg_blank.png');
+	background-repeat:no-repeat;
+	padding:2px 0 0 8px;
+}
+
+.ratings-disable{
+	float:left;
+	margin:10px 0 0 0;
+	background-image: url('../assets/images/theme1/rating_bg.png');
+	background-repeat:no-repeat;
+	padding:2px 0 0 8px;
+}
+
+
+/* Specify Rating Bar Styles: */
+
+
+
+.jquery-ratings-star {
+  width: 18px;
+  height: 18px;
+  background-image: url('../assets/images/theme1/star_gray.png');
+  background-repeat: no-repeat;
+  position: relative;
+  float: left;
+  margin-top:2px;
+  margin-right:5px;
+}
+
+.jquery-ratings-full {
+  background-image: url('../assets/images/theme1/star_yellow.png');
+}
+
+
+
+
+/* Specify Accordian UI Styles: */
 
 .ui-collapsible-content {
-    -webkit-transition: all 1s;
-    -moz-transition: all 1s;
-    -ms-transition: all 1s;
-    -o-transition: all 1s;
-    transition: all 1s;
-    height: 2em; /* or auto */
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+    height: 3em; /* or auto */
     overflow: hidden;
+	color:#000;
+	margin:0 0 0 -7px;
+	padding:0;
 }
 .ui-collapsible-content-collapsed {
     display: block;
     height: 0;
-    padding: 0 16px;
+    padding: 0;
+	
+}
+
+
+.ui-collapsible, .ui-collapsible-collapsed{
+	margin:0 5px 0 5px;
+	padding:0;
+}
+
+.ui-collapsible-heading, ui-collapsible-heading-collapsed{
+	padding: 0;
+	margin:0;
+	
+}
+
+.ui-collapsible-set{
+	margin:0.1em;
+}
+
+#collaspible-set{
+	width:645px;
+}
+
+#collaspible-set .study-btn, #collaspible-set .gaming-btn, #collaspible-set .quiz-btn{
+	float:left;
+	margin:0px 0 5px 11px;
+}
+
+#collaspible-set .ui-btn-text{
+	font-size:18px;
+}
+
+#collaspible-set .ui-btn-icon-left > .ui-btn-inner > .ui-icon, .ui-btn-icon-right > .ui-btn-inner > .ui-icon{
+	margin-top:-13px;
+	margin-right:5px;
+	float:right;
+	width:25px;
+	height:25px;
+	background:url(../assets/images/theme1/accordian_arrow1.png);
+}
+
+#collaspible-set .ui-collapsible-collapsed .ui-icon{
+	background:url(../assets/images/theme1/accordian_arrow2.png);
+}
+
+#collaspible-set .ui-btn-inner{
+	background:url(../assets/images/theme1/accordian_bg.png) no-repeat top left;
+	border:none;
+	border-width:0;
+	height:36px;
+	padding-top: 14px;
+}
+
+#collaspible-set .ui-btn-up-c, #collaspible-set .ui-btn-hover-c{
+	background:none;
+	border:none;
 }

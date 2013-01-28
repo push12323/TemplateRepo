@@ -1,18 +1,26 @@
 /**
  * @author prashant.raut
  */
-createFirstQuestion();
+page_1();
 
-function createFirstQuestion()
+function page_1()
 {
-    console.log("createFirstQuestion"); 
-    $("#appContainer").append("<div id='pageCont'/>");
-    $("#pageCont").css("height", "100%");
-    $("#pageCont").css("backgroundColor", "gray");
-    $("#pageCont").css("color", "white");
-    //$('#pageCont').css('textShadow','black 1px 1px 1px');
-    $('#pageCont').css('textAlign','center');
-    $("#pageCont").append("<div id='formCont' style='display:inline-block; margin-top:20px; width:350px;'/>");
-    $("#formCont").append("<h2>Object-oriented programming</h2><br/>Object-oriented programming is a programming paradigm that uses abstraction to create models based on the real world. It uses several techniques from previously established paradigms, including modularity, polymorphism, and encapsulation. Today, many popular programming languages (such as Java, JavaScript, C#, C++, Python, PHP, Ruby and Objective-C) support object-oriented programming (OOP). Object-oriented programming may be seen as the design of software using a collection of cooperating objects, as opposed to a traditional view in which a program may be seen as a collection of functions, or simply as a list of instructions to the computer. In OOP, each object is capable of receiving messages, processing data, and sending messages to other objects. Each object can be viewed as an independent little machine with a distinct role or responsibility.Object-oriented programming is intended to promote greater flexibility and maintainability in programming, and is widely popular in large-scale software engineering. By virtue of its strong emphasis on modularity, object oriented code is intended to be simpler to develop and easier to understand later on, lending itself to more direct analysis, coding, and understanding of complex situations and procedures than less modular programming methods.2<br/>");
-    $("#pageCont").trigger("create");
+	var attachTo = currentId + 1;
+	$("#"+attachTo).empty();
+    console.log("create1Question "+currentId); 
+	var first_id = "loginCont"+attachTo;
+	var second_id = "formCont"+attachTo;
+	var third_id = "fieldset"+attachTo;
+    $("#"+attachTo).append("<div id='"+first_id+"'/>");
+    $("#"+first_id).css("height", "100%");
+    //$("#"+first_id).css("backgroundColor", "gray");
+    //$("#"+first_id).css("color", "white");
+	
+    //$("#"+first_id).css('textShadow','black 1px 1px 1px');
+    //$("#"+first_id).css('textAlign','center');
+    $("#"+first_id).css('textAlign','center');
+	$('.ui-controlgroup-label').css('font-size','18px')
+    $("#"+first_id).append("<div id='"+second_id+"' style='display:inline-block; width:80%;'/>");
+    $("#"+second_id).append("<span>This is First Page</span><br/><br/>Closures are arguably the great secret of Javascript: the way variable scope stacks get frozen at the point of closure (and hence variables persist within the closure) is quite subtle and catches most out, including me! Be warned that IEx has a garbage-collector subtlety, though; I think that if you reference a DOM variable in a Javascript closure, then the collection mechanism gets confused and it doesn’t get trashed at the end of the request: eventually this becomes a memory leak. I think it’s because DOM variables and internal JS variables get collected by two different collectors, and they don’t communicate properly about what’s no longer being used.");
+	$("#"+first_id).trigger("create");
 }

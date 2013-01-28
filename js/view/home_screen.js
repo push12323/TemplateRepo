@@ -33,6 +33,7 @@ function addEventListeners()
 
 function onHomeBooksClick()
 {
+	console.log("onHomeBooksClick");
     gotoMyBookScreen();
 }
 

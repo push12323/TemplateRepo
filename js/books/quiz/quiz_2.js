@@ -1,48 +1,53 @@
 /**
  * @author prashant.raut
  */
-createFirstQuestion();
+quiz_2();
 
-function createFirstQuestion()
+function quiz_2()
 {
-    console.log("createFirstQuestion"); 
-    $("#appContainer").append("<div id='loginCont'/>");
-    $("#loginCont").css("height", "100%");
-    $("#loginCont").css("backgroundColor", "gray");
-    $("#loginCont").css("color", "white");
-    //$('#loginCont').css('textShadow','black 1px 1px 1px');
-    $('#loginCont').css('textAlign','center');
-    $("#loginCont").append("<div id='formCont' style='display:inline-block; margin-top:70px; width:80%;'/>");
-    $("#formCont").append("<span>This is Second Question</span><br/><br/>");
-	$("#formCont").append("<fieldset data-role='controlgroup' id='fieldset' />");
-	$("#fieldset").append("<legend>What does HTML stand for ? </legend>");
-	$("#fieldset").append("<input type='radio' name='radio-choice-1' id='radio-choice-1' value='choice-1' checked='checked' />");
-	$("#fieldset").append("<label for='radio-choice-1'>Hyper Text Markup Language</label>");
+	var attachTo = currentId + 1;
+	$("#"+attachTo).empty();
+    console.log("create2Question "+currentId); 
+	var first_id = "loginCont"+attachTo;
+	var second_id = "formCont"+attachTo;
+	var third_id = "fieldset"+attachTo;
+    $("#"+attachTo).append("<div id='"+first_id+"'/>");
+    $("#"+first_id).css("height", "100%");
+    //$("#"+first_id).css("backgroundColor", "gray");
+    //$("#"+first_id).css("color", "white");
+	
+    //$("#"+first_id).css('textShadow','black 1px 1px 1px');
+    //$("#"+first_id).css('textAlign','center');
+    $("#"+first_id).css('textAlign','center');
+	$('.ui-controlgroup-label').css('font-size','18px')
+    $("#"+first_id).append("<div id='"+second_id+"' style='display:inline-block; width:80%;'/>");
+    $("#"+second_id).append("<span>This is Second Question</span><br/><br/>");
+	$("#"+second_id).append("<fieldset data-role='controlgroup' id='"+third_id+"' />");    
+	$("#"+third_id).append("<legend>Choose the correct HTML tag for the heading:</legend>");
+    $("#"+third_id).append("<input type='checkbox' name='checkbox-1a' id='checkbox-1a' class='custom' />");
+    $("#"+third_id).append("<label for='checkbox-1a'>head</label>");
 
-	$("#fieldset").append("<input type='radio' name='radio-choice-1' id='radio-choice-2' value='choice-2'  />");
-	$("#fieldset").append("<label for='radio-choice-2'>Home Tool Markup Language</label>");
+    $("#"+third_id).append("<input type='checkbox' name='checkbox-2a' id='checkbox-2a' class='custom' />");
+    $("#"+third_id).append("<label for='checkbox-2a'>heading</label>");
+        
+    $("#"+third_id).append("<input type='checkbox' name='checkbox-3a' id='checkbox-3a' class='custom' />");
+    $("#"+third_id).append("<label for='checkbox-3a'>h1</label>");
 
-	$("#fieldset").append("<input type='radio' name='radio-choice-1' id='radio-choice-3' value='choice-3'  />");
-	$("#fieldset").append("<label for='radio-choice-3'>Hyperlinks Markup Language</label>");
-
-	$("#fieldset").append("<input type='radio' name='radio-choice-1' id='radio-choice-4' value='choice-4'  />");
-	$("#fieldset").append("<label for='radio-choice-4'>Hyperlinks and Text Markup Language</label>");
+    $("#"+third_id).append("<input type='checkbox' name='checkbox-4a' id='checkbox-4a' class='custom' />");
+    $("#"+third_id).append("<label for='checkbox-4a'>h3</label>");
 	
+	$("#"+second_id).append("<button type='submit' data-theme='b' onclick=checkOption() name='submit' value='submit-value' class='ui-btn-hidden' aria-disabled='false'>Submit</button>");
 	
-	$("#formCont").append("<button type='submit' data-theme='b' onclick=checkOption() name='submit' value='submit-value' class='ui-btn-hidden' aria-disabled='false'>Submit</button>");
+	$("#"+second_id).append("<div id='wrong' data-role='popup' data-theme='e' data-overlay-theme='a' class='ui-content'> Wrong Answer </div>")
+	$("#"+second_id).append("<div id='right' data-role='popup' data-theme='e' data-overlay-theme='a' class='ui-content'> Right Answer </div>")
+	$("#"+second_id).append("<div id='selectans' data-role='popup' data-theme='e' data-overlay-theme='a' class='ui-content'> Please Select Answer </div>")
 	
-	$("#formCont").append("<div id='wrong' data-role='popup' data-theme='e' data-overlay-theme='a' class='ui-content'> Wrong Answer </div>")
-	$("#formCont").append("<div id='right' data-role='popup' data-theme='e' data-overlay-theme='a' class='ui-content'> Wrong Answer </div>")
-	$("#formCont").append("<div id='selectans' data-role='popup' data-theme='e' data-overlay-theme='a' class='ui-content'> Please Select Answer </div>")
-    $("#loginCont").trigger("create");
-	
-	qEngine.setScore(false);
-    
+	$("#"+first_id).trigger("create");
 }
 
 function checkOption()
 {
-	var correctAns = "choice-1";
+	var correctAns = "checkbox-3a,checkbox-4a";
 	var checkedAns = "";
 	
 	
@@ -51,7 +56,14 @@ function checkOption()
 		
 		if($("input")[i].checked)
 		{
-			checkedAns = $("input")[i].value;
+			if(checkedAns == "")
+			{
+				checkedAns += $("input")[i].id;
+			}
+			else
+			{
+				checkedAns += "," + $("input")[i].id;
+			}
 		}		
        
     });
@@ -71,6 +83,7 @@ function checkOption()
 		{
 			qEngine.setScore(false);
 			$( "#wrong" ).popup( "open" );
+			//loadPage("Path to js");
 			loadPage("js/books/quiz/"+this);
 			createFirstQuestion();
 		}

@@ -7,32 +7,108 @@ function createBookMenu()
 {
     console.log("createhomeScreen"); 
     $("#appContainer").append("<div id='bookMenuCont'/>");
-    $("#bookMenuCont").css("height", "100%");
-    $("#bookMenuCont").css("backgroundColor", "gray");
-    $("#bookMenuCont").css("color", "white");
+    //$("#bookMenuCont").css("height", "100%");
+    //$("#bookMenuCont").css("backgroundColor", "gray");
+    $("#bookMenuCont").css("color", "black");
     //$('#bookMenuCont').css('textShadow','black 1px 1px 1px');
     $('#bookMenuCont').css('textAlign','center');
-    $("#bookMenuCont").append("<div id='formCont' style='display:inline-block; width:930px; padding-left:40px;'/>");
+    $("#bookMenuCont").append("<div id='formCont' style='display:inline-block; width:930px; height:590px; padding-left:40px;'/>");
 	
-	$("#formCont").append("<div class='book-desc'><div class='book-cover'><img src='assets/images/theme1/book1_stage1.png'  onClick='onBookClick()' /></div><div class='book-content'><h3>Interactive Science</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent tincidunt mi vel lectus sodales consequat. Quisque vitae ipsum lacus, et molestie erat. Ut rhoncus nisl in nisl bibendum non commodo ligula semper. Aenean erat nunc, ultricies eget bibendum nec, tincidunt ut risus. Etiam scelerisque, massa a fringilla aliquam, libero quam viverra justo, quis consectetur orci dui sit amet metus. </p></div></div>");
+	$("#formCont").append("<div class='swiper-container swiper-nested1 swiper-n1' />");
+    $(".swiper-container").append("<div class='swiper-wrapper' />");
+    $(".swiper-wrapper").append("<div class='swiper-slide slide-one'>	<div class='book-info'><div class='book-cover'><img src='assets/images/theme1/book1_stage2.png' /></div><div class='book-content'><h3>Interactive Science</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent tincidunt mi vel lectus sodales consequat. Quisque vitae ipsum lacus, et molestie erat. Ut rhoncus nisl in nisl bibendum non commodo ligula semper. Aenean erat nunc, ultricies eget bibendum nec, tincidunt ut risus. Etiam scelerisque, massa a fringilla aliquam, libero quam viverra justo, quis consectetur orci dui sit amet metus. </p></div><div class='book-ratings'><div id='example-2'></div></div></div> 	<div class='book-chapters' style='width:650px; height:590px; margin:0 auto'>		<div class='swiper-container vertical sc5'><div class='swiper-wrapper'><div class='swiper-slide'><div class='dummy-page'>		<div id='collaspible-set' data-role='collapsible-set' data-inset='false'>	<div data-role='collapsible' data-iconpos='right'>   <h3>Ch.1 Sound</h3>   	<div class='study-btn' onclick='onBookMenuContentClick()'><img src='assets/images/theme1/btn_std_time.png'/></div>	<div class='gaming-btn'><img src='assets/images/theme1/btn_game.png'/></div>	<div class='quiz-btn' onclick='onBookMenuQuizClick()'><img src='assets/images/theme1/btn_quiz.png'/></div>		</div>	<div data-role='collapsible' data-iconpos='right'>   <h3>Ch.2 Force and Pressure</h3>   	<div class='study-btn'><img src='assets/images/theme1/btn_std_time.png'/></div>	<div class='gaming-btn'><img src='assets/images/theme1/btn_game.png'/></div>	<div class='quiz-btn'><img src='assets/images/theme1/btn_quiz.png'/></div>		</div>	<div data-role='collapsible' class='ui-disabled' data-iconpos='right'>   <h3>Ch.3 Light</h3>   	<div class='study-btn'><img src='assets/images/theme1/btn_std_time.png'/></div>	<div class='gaming-btn'><img src='assets/images/theme1/btn_game.png'/></div>	<div class='quiz-btn'><img src='assets/images/theme1/btn_quiz.png'/></div>		</div>	<div data-role='collapsible' class='ui-disabled' data-iconpos='right'>   <h3>Ch.4 Velocity</h3>   	<div class='study-btn'><img src='assets/images/theme1/btn_std_time.png'/></div>	<div class='gaming-btn'><img src='assets/images/theme1/btn_game.png'/></div>	<div class='quiz-btn'><img src='assets/images/theme1/btn_quiz.png'/></div>		</div>	<div data-role='collapsible' class='ui-disabled' data-iconpos='right'>   <h3>Ch.3 Light</h3>   	<div class='study-btn'><img src='assets/images/theme1/btn_std_time.png'/></div>	<div class='gaming-btn'><img src='assets/images/theme1/btn_game.png'/></div>	<div class='quiz-btn'><img src='assets/images/theme1/btn_quiz.png'/></div>		</div>	<div data-role='collapsible' class='ui-disabled' data-iconpos='right'>   <h3>Ch.6 Energy Consumption</h3>   	<div class='study-btn'><img src='assets/images/theme1/btn_std_time.png'/></div>	<div class='gaming-btn'><img src='assets/images/theme1/btn_game.png'/></div>	<div class='quiz-btn'><img src='assets/images/theme1/btn_quiz.png'/></div>		</div>	<div data-role='collapsible' class='ui-disabled' data-iconpos='right'>   <h3>Ch.7 Fuel</h3>   	<div class='study-btn'><img src='assets/images/theme1/btn_std_time.png'/></div>	<div class='gaming-btn'><img src='assets/images/theme1/btn_game.png'/></div>	<div class='quiz-btn'><img src='assets/images/theme1/btn_quiz.png'/></div>		</div>	<div data-role='collapsible' class='ui-disabled' data-iconpos='right'>   <h3>Ch.8 Natural Resources</h3>   	<div class='study-btn'><img src='assets/images/theme1/btn_std_time.png'/></div>	<div class='gaming-btn'><img src='assets/images/theme1/btn_game.png'/></div>	<div class='quiz-btn'><img src='assets/images/theme1/btn_quiz.png'/></div>		</div>	<div data-role='collapsible' class='ui-disabled' data-iconpos='right'>   <h3>Ch.9 Pollutions</h3>   	<div class='study-btn'><img src='assets/images/theme1/btn_std_time.png'/></div>	<div class='gaming-btn'><img src='assets/images/theme1/btn_game.png'/></div>	<div class='quiz-btn'><img src='assets/images/theme1/btn_quiz.png'/></div>		</div>	<div data-role='collapsible' class='ui-disabled' data-iconpos='right'>   <h3>Ch.10 Atmosphere</h3>   	<div class='study-btn'><img src='assets/images/theme1/btn_std_time.png'/></div>	<div class='gaming-btn'><img src='assets/images/theme1/btn_game.png'/></div>	<div class='quiz-btn'><img src='assets/images/theme1/btn_quiz.png'/></div>		</div>	 </div>		</div></div></div><div class='swiper-scrollbar sb5'></div></div>		</div>	</div>");	
+		<!-- Scrollbar: -->
+    //$("#swiper-container").append("<div class='swiper-scrollbar-verticle' />");
 	
-	$("#formCont").append("<div data-role='collapsible-set'><div data-role='collapsible'><h3>Header</h3><p>Content</p></div><div data-role='collapsible' data-collapsed='true'><h3>Header</h3><p>Content</p></div><div data-role='collapsible' data-collapsed='true'><h3>Header</h3><p>Content</p></div></div>");
+	$(document).ready(function() {
+		
+		
+	/* Nested Swipers. Vertical Swiper inside of horizontal: 	
+	var swiperN1 = $('.swiper-n1').swiper({
+		slidesPerSlide : 1,
+	});*/
 	
-	$("#formCont").append("<div class='swiper-container swiper-scroll-container' />");
-    $(".swiper-car").append("<div class='pagination-car'></div>");
-    $(".swiper-car").append("<div class='swiper-wrapper' />");
+	var swiper = new Swiper('.swiper-n1', {
 	
-	$("#formCont").append("<button data-role='button' id='bMenu_quiz' value='Quiz'/>");
-    /*$("#formCont").append("<span>This is Home screen</span><br/><br/>");
-    $("#formCont").append("<button data-role='button' id='bMenu_content' value='Content'/>");
-    $("#formCont").append("<button data-role='button' id='bMenu_acivity' value='Activity'/>");
-    $("#formCont").append("<button data-role='button' id='bMenu_quiz' value='Quiz'/>");
-    $("#formCont").append("<button data-role='button' id='bMenu_games' value='Games'/>");*/
-    $("#bookMenuCont").trigger("create");
+		slidesPerSlide : 1,
+	   
+		
+	})
+	
+	var swiperN2 = new Swiper('.sc5', {		
+		scrollContainer:true,
+		mode:'vertical',
+		//Enable Scrollbar
+		scrollbar: {
+			container :'.sb5',
+			hide: true,
+			draggable: true	
+		}
+	})
+	
+	  
+	  // JavaScript For Ratings
+	  $('#example-2').ratings(5).bind('ratingchanged', function(event, data) {
+		$('#example-rating-2').text(data.rating);
+	  });  
+		 
+		 var collapsibleHeight = $('#collaspible-set').height();
+			console.log(collapsibleHeight);
+			 $('.vertical .swiper-wrapper').css("height",(collapsibleHeight))
+			 $('.vertical .swiper-slide').css("height",(collapsibleHeight)) 
+			 resetSwiper(swiperN2);
+		 
+		 
+		 $("div[data-role='collapsible-set']").bind("collapse",function(){			
+			 $('.ui-collapsible-content').on('webkitTransitionEnd moztransitionend transitionend oTransitionEnd', function () {
+				
+				collapsibleHeight = $('.ui-collapsible-set').height();
+				$('.vertical .swiper-wrapper').css("height",(collapsibleHeight))
+				$('.vertical .swiper-slide').css("height",(collapsibleHeight)) 
+				resetSwiper(swiperN2);
+			 });
+		 });
+		 
+		 $("div[data-role='collapsible-set']").bind("expand",function(){
+			 $('.ui-collapsible-content').on('webkitTransitionEnd moztransitionend transitionend oTransitionEnd', function () {
+				
+				collapsibleHeight = $('.ui-collapsible-set').height();
+				$('.vertical .swiper-wrapper').css("height",(collapsibleHeight))
+				$('.vertical .swiper-slide').css("height",(collapsibleHeight)) 
+				resetSwiper(swiperN2);
+			 });
+		 });	
+		 
+	  
+	});
+	
+	
+	
+	$("#bookMenuCont").trigger("create");
+	
     
     addEventListeners();
 }
 
+function onCollapsibleClick(event)
+{
+	console.log(event);
+}
+
+function resetSwiper(mySwiper)
+{
+	mySwiper.reInit();
+}
+function onBookMenuQuizClick()
+{
+	refreshContentNavigation("quiz");
+	loadQuizEngine();
+}
+function onBookMenuContentClick()
+{
+	refreshContentNavigation("content");
+	loadContentEngine();
+}
 function addEventListeners()
 {
     $("#bMenu_content").on("tap", onBmenuCotentTap);
@@ -61,3 +137,4 @@ function onBmenuGamesTap()
 {
     alert("This page is not ready yet!");
 }
+

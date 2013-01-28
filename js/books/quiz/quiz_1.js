@@ -1,109 +1,84 @@
 /**
  * @author prashant.raut
  */
-createFirstQuestion();
+//createFirstQuestion();
 
-function createFirstQuestion()
+quiz_1();
+
+function quiz_1()
 {
-    console.log("createFirstQuestion"); 
-    $("#appContainer").append("<div id='loginCont'/>");
-    $("#loginCont").css("height", "100%");
-    $("#loginCont").css("backgroundColor", "gray");
-    $("#loginCont").css("color", "white");
-    //$('#loginCont').css('textShadow','black 1px 1px 1px');
+	var attachTo = currentId + 1;
+	$("#"+attachTo).empty();
+    console.log("create1Question "+currentId); 
+	var first_id = "loginCont"+attachTo;
+	var second_id = "formCont"+attachTo;
+	var third_id = "fieldset"+attachTo;
+    $("#"+attachTo).append("<div id='"+first_id+"'/>");
+    $("#"+first_id).css("height", "100%");
+    //$("#"+first_id).css("backgroundColor", "gray");
+    //$("#"+first_id).css("color", "white");
 	
-	$('#loginCont').css('textAlign','center');
-    //$('#loginCont').css('textShadow','black 1px 1px 1px'); $('#loginCont').css('textAlign','center');
-    $("#loginCont").append("<div id='formCont' style='display:inline-block; margin-top:70px; width:80%;'/>");
-    $("#formCont").append("<span>This is Fourth Question</span><br/><br/>");
+    //$("#"+first_id).css('textShadow','black 1px 1px 1px');
+    //$("#"+first_id).css('textAlign','center');
+    $("#"+first_id).css('textAlign','center');
+	$('.ui-controlgroup-label').css('font-size','18px')
+    $("#"+first_id).append("<div id='"+second_id+"' style='display:inline-block; width:80%;'/>");
+    $("#"+second_id).append("<span>This is First Question</span><br/><br/>");
+	$("#"+second_id).append("<fieldset data-role='controlgroup' id='"+third_id+"' />");    
+	$("#"+third_id).append("<legend>Choose the correct HTML tag for the heading:</legend>");
+    $("#"+third_id).append("<input type='checkbox' name='checkbox-1a' id='checkbox-1a' class='custom' />");
+    $("#"+third_id).append("<label for='checkbox-1a'>head</label>");
+
+    $("#"+third_id).append("<input type='checkbox' name='checkbox-2a' id='checkbox-2a' class='custom' />");
+    $("#"+third_id).append("<label for='checkbox-2a'>heading</label>");
+        
+    $("#"+third_id).append("<input type='checkbox' name='checkbox-3a' id='checkbox-3a' class='custom' />");
+    $("#"+third_id).append("<label for='checkbox-3a'>h1</label>");
+
+    $("#"+third_id).append("<input type='checkbox' name='checkbox-4a' id='checkbox-4a' class='custom' />");
+    $("#"+third_id).append("<label for='checkbox-4a'>h3</label>");
 	
-	$("#formCont").append("<h2>Identify the dog sound from below option? </h2>");
+	$("#"+second_id).append("<button type='submit' data-theme='b' onclick=checkOption() name='submit' value='submit-value' class='ui-btn-hidden' aria-disabled='false'>Submit</button>");
 	
-	$("#formCont").append("<ul data-role='listview' data-split-icon='arrow-r' data-split-theme='d' id='answerlist'><li id='choice-1'><a href='#' onclick='setOptions($(this).parent().parent().parent())'><h3>Audio - 1</h3></a><a href='#' onclick='playSound(audio1)';>Play Audio</a></li><li id='choice-2'><a href='#' onclick='setOptions($(this).parent().parent().parent())'><h3>Audio - 2</h3></a><a href='#' onclick='playSound(audio2)'>Play Audio</a></li><li id='choice-3'><a href='#' onclick='setOptions($(this).parent().parent().parent())'><h3>Audio - 3</h3></a><a href='#' onclick='playSound(audio3)'>Play Audio</a></li><li id='choice-4'><a href='#' onclick='setOptions($(this).parent().parent().parent())'><h3>Audio - 4</h3></a><a href='#' onclick='playSound(audio4)'>Play Audio</a></li></ul>");
+	$("#"+second_id).append("<div id='wrong' data-role='popup' data-theme='e' data-overlay-theme='a' class='ui-content'> Wrong Answer </div>")
+	$("#"+second_id).append("<div id='right' data-role='popup' data-theme='e' data-overlay-theme='a' class='ui-content'> Right Answer </div>")
+	$("#"+second_id).append("<div id='selectans' data-role='popup' data-theme='e' data-overlay-theme='a' class='ui-content'> Please Select Answer </div>")
 	
-	$("#formCont").append("<audio id='audio1'><source src='assets/sounds/quiz/Cat.ogg' type='audio/ogg'/><source src='assets/sounds/quiz/Cat.wav' type='audio/wave'/><source src='assets/sounds/quiz/Cat.mp3' type='audio/mpeg'/></audio><audio id='audio2'><source src='assets/sounds/quiz/Dog.ogg' type='audio/ogg'/><source src='assets/sounds/quiz/Dog.wav' type='audio/wave'/><source src='assets/sounds/quiz/Dog.mp3' type='audio/mpeg'/></audio><audio id='audio3'><source src='http://chronostechnologies.com/ApplicationTemplate/assets/sounds/quiz/Horse.ogg' type='audio/ogg'/><source src='http://chronostechnologies.com/ApplicationTemplate/assets/sounds/quiz/Horse.wav' type='audio/wave'/><source src='http://chronostechnologies.com/ApplicationTemplate/assets/sounds/quiz/Horse.mp3' type='audio/mpeg'/></audio><audio id='audio4'><source src='assets/sounds/quiz/Lion.ogg' type='audio/ogg'/><source src='assets/sounds/quiz/Lion.wav' type='audio/wave'/><source src='assets/sounds/quiz/Lion.mp3' type='audio/mpeg'/></audio>");
-	
-	$("#formCont").append("<button type='submit' data-theme='b' onclick=checkOption() name='submit' value='submit-value' class='ui-btn-hidden' aria-disabled='false'>Submit</button>");
-	
-	$("#formCont").append("<div id='wrong' data-role='popup' data-theme='e' data-overlay-theme='a' class='ui-content'> Wrong Answer </div>")
-	$("#formCont").append("<div id='right' data-role='popup' data-theme='e' data-overlay-theme='a' class='ui-content'> Wrong Answer </div>")
-	$("#formCont").append("<div id='selectans' data-role='popup' data-theme='e' data-overlay-theme='a' class='ui-content'> Please Select Answer </div>")
-	
-	checkFileLocation();
-	
-    $("#loginCont").trigger("create");
-	
-	qEngine.setScore(false);
-}
-
-/*function playSound(soundfile) {
-	var audio = document.getElementById(soundfile.id);
-	audio.play();
-}*/
-
-function checkFileLocation()
-{
-	window.requestFileSystem  = window.requestFileSystem || window.webkitRequestFileSystem;
-    window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
-}
-
-function fail() {
-	alert("failed to get filesystem");
-}
-
-function gotFS(fileSystem) {
-	alert("got filesystem");
-
-		// save the file system for later access
-	alert(fileSystem.root.fullPath);
-	window.rootFS = fileSystem.root;
-}
-
-function playSound(src) {
-	if (device.platform == 'Android') {
-		alert(src);
-		src = '/android_asset/www/' + src;
-		
-	}
-
-	var media = new Media(src, success, error_error);
-
-	media.play();
-}
-
-function success() {
-	// ignore
-}
-
-function error_error(e) {
-	alert('great error');
-	alert(e.message);
-}
-
-
-
-function setOptions(choice)
-{
-	givenAns = $(choice).attr("id");
-	
-	$(choice).parent("ul").children("li").removeClass("listItem-selected");
-	
-	$(choice).addClass("listItem-selected");
-	
+	$("#"+first_id).trigger("create");
+	  
+	//qEngine.setScore(false);
 }
 
 function checkOption()
 {
-	correctAns = "choice-2";
+	var correctAns = "checkbox-3a,checkbox-4a";
+	var checkedAns = "";
 	
 	
-	if(givenAns == "")
+	$.each($("input"), function (i, item) {
+		
+		
+		if($("input")[i].checked)
+		{
+			if(checkedAns == "")
+			{
+				checkedAns += $("input")[i].id;
+			}
+			else
+			{
+				checkedAns += "," + $("input")[i].id;
+			}
+		}		
+       
+    });
+	
+	if(checkedAns == "")
 	{
 		$( "#selectans" ).popup( "open" );
 	}
 	else
 	{
-		if(givenAns == correctAns)
+		if(checkedAns == correctAns)
 		{
 			qEngine.setScore(true);
 			$( "#right" ).popup( "open" );
@@ -112,8 +87,9 @@ function checkOption()
 		{
 			qEngine.setScore(false);
 			$( "#wrong" ).popup( "open" );
+			//loadPage("Path to js");
 			loadPage("js/books/quiz/"+this);
-			createFirstQuestion();
+			createQuestion_1();
 		}
 	}	
 }

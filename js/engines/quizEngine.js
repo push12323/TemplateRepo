@@ -7,10 +7,10 @@ function quizEngine(p)
     this.pages;
     this.currentPage = 0;
     this.scoreMgr;
+	this.isInitialpagesLoaded = false;
     this.setQuizPages = function(pa)
     {
         this.pages = pa;
-        footerDiv.addNavigation(this);
         this.loadFirstPage();
         this.scoreMgr = new scoreManager();
         
@@ -29,38 +29,70 @@ function quizEngine(p)
     }
     this.loadFirstPage = function()
     {
-        console.log(this.pages[0]);
-        loadPage("js/books/quiz/"+this.pages[0]);
-        footerDiv.enablePrevBtn(false);
+		//insertStyle("css/page_swipe_cont.css");
+		//$.getScript("js/view/page_swipe_container.js", this.onContainerLoad);
+		createSwiperDivs(this);
+		$.mobile.loading('show', { theme: "b", text: "Please wait Loading Content...", textonly: true, textVisible:true });
+		//this.loadContentPage(1);
     }
-    this.loadNextPage = function()
-    {
-        console.log(this.currentPage);
-        if(this.currentPage < this.pages.length-1)
-        {
-            this.currentPage++;
-            loadPage("js/books/quiz/"+this.pages[this.currentPage]);
-            if(this.currentPage == this.pages.length-1)
-            {
-                footerDiv.enableNextBtn(false);
-            }
-            footerDiv.enablePrevBtn(true);
-        }
-    }
-    this.loadPreviousPage = function()
-    {
-        if(this.currentPage > 0)
-        {
-            this.currentPage--;
-            loadPage("js/books/quiz/"+this.pages[this.currentPage]);
-            if(this.currentPage == 0)
-            {
-                footerDiv.enablePrevBtn(false);
-            }
-            footerDiv.enableNextBtn(true);
-        }
-    }
+	/*this.onContainerLoad = function()
+	{
+		console.log("onContainerLoad");
+		qEngine.loadContentPage(1);
+	}*/
+	
+	this.loadContentPage = function(no)
+	{
+		console.log("Loading page "+this.pages[no]);
+		var path;
+		if(this.pages[no].substr(0,4) == "page")
+		{
+			path = "js/books/content/";
+		}
+		else if(this.pages[no].substr(0,4) == "quiz")
+		{
+			path = "js/books/quiz/";
+		}
+		console.log("Path >> "+path+this.pages[no]);
+		$.getScript(path+this.pages[no], this.onResult);
+		
+	}
+	this.onResult = function(data)
+	{
+		console.log("onResult >> "+currentId);
+		//createFirstQuestion($("#pFirstDiv"));
+		
+		if(!qEngine.isInitialpagesLoaded)
+		{
+			//var func = "createQuestion_"+(currentId+1);
+			//window[func]($('#'+(currentId+1)));
+			//console.log("Calling function "+func);
+			currentId++;
+			if(currentId < 3)
+			{
+				//qEngine.loadContentPage(currentId+1);
+				setTimeout(pCallDelayFunction, 500, qEngine);
+			}
+			else
+			{
+				//currentId++;
+				qEngine.isInitialpagesLoaded = true;
+				$.mobile.loading('hide');
+			}
+		}
+		else
+		{
+			//var func = "createQuestion_"+(currentId);
+			//window[func]($('#'+(currentId)));
+			//console.log("Calling function "+func);
+			currentId++;
+		}
+	}
     this.setQuizPages(p);
+}
+function callDelayFunction(ref)
+{
+	ref.loadContentPage(currentId+1);
 }
 
 function scoreManager()
