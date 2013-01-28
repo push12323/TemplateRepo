@@ -101,13 +101,19 @@ function resetSwiper(mySwiper)
 }
 function onBookMenuQuizClick()
 {
+	$("#mainContainer").animate({opacity: 0,marginLeft:1024}, 500,function() {
 	refreshContentNavigation("quiz");
 	loadQuizEngine();
+	$("#mainContainer").animate({opacity: 1,marginLeft:0},  1000);
+	});
 }
 function onBookMenuContentClick()
 {
+	$("#mainContainer").animate({opacity: 0,marginLeft:1024}, 500,function() {
 	refreshContentNavigation("content");
 	loadContentEngine();
+	$("#mainContainer").animate({opacity: 1,marginLeft:0},  1000);
+	});
 }
 function addEventListeners()
 {

@@ -3,6 +3,12 @@
 	background:url(../assets/images/theme1/bg.jpg) repeat top left;
 }
 
+#appContainer{
+	opacity:1;
+	margin-left:0;
+}
+
+
 .headerDiv
 {
 	color: white;

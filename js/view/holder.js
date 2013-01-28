@@ -34,14 +34,12 @@ function gotoMyBookScreen()
 {
     headerDiv.createMyBooksBtns();
 	footerDiv.emptyFooter();
-	insertStyle("css/my_books.css");
-    loadPage("js/view/my_books.js");
+	loadPage("js/view/my_books.js","css/my_books.css");
 }
 
 function gotoBookMenu()
 {
-	insertStyle("css/book_menu.css");
-    loadPage("js/view/book_menu.js");
+    loadPage("js/view/book_menu.js","css/book_menu.css");
 }
 
 function gotoNoteScreen()
@@ -96,14 +94,44 @@ function insertStyle(css){
     document.getElementsByTagName('head')[0].appendChild(elem);
 }
 
-function loadPage(script_path, status)
+function loadPage(script_path,css_path,status)
 {
     if(status == undefined)
     {
         status = "temp";
     }
-     $("#appContainer").empty();
-     insertScript(script_path, status);
+	 // $("#appContainer").fadeToggle("slow", "linear");
+		
+	
+	/*$("#appContainer").animate({opacity: 0}, 500,function() {
+		
+	  $("#appContainer").empty();
+	  
+	  if(css_path != null)
+	  {
+		 insertStyle(css_path);
+	  }
+	  insertScript(script_path, status);
+	  
+	  $("#appContainer").animate({opacity: 1},  1000);
+	});
+	*/
+	
+	$("#appContainer").animate({opacity: 0,marginLeft:1024}, 500,function() {
+		
+	  $("#appContainer").empty();
+	  
+	  if(css_path != null)
+	  {
+		 insertStyle(css_path);
+	  }
+	  insertScript(script_path, status);
+	  
+	  $("#appContainer").animate({opacity: 1,marginLeft:0},  1000);
+	});
+	
+	
+     
 }
 
 function addPopup(script_path)

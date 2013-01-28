@@ -31,6 +31,7 @@ function quizEngine(p)
     {
 		//insertStyle("css/page_swipe_cont.css");
 		//$.getScript("js/view/page_swipe_container.js", this.onContainerLoad);
+		
 		createSwiperDivs(this);
 		$.mobile.loading('show', { theme: "b", text: "Please wait Loading Content...", textonly: true, textVisible:true });
 		//this.loadContentPage(1);
@@ -54,6 +55,7 @@ function quizEngine(p)
 			path = "js/books/quiz/";
 		}
 		console.log("Path >> "+path+this.pages[no]);
+		
 		$.getScript(path+this.pages[no], this.onResult);
 		
 	}
