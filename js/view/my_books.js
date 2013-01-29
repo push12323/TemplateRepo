@@ -34,14 +34,19 @@ function createMyBookScreen()
 		}
 	})*/
 	
-	/* Scroll container: */
+	/* Scroll container: 
 	var sScroll = $('.swiper-scroll-container').swiper({
 		scrollContainer : true,
 		scrollbar : {
 			container : '.swiper-scrollbar'	,
-			hide: false
+			mode:'horizontal',
+			hide: false,
+			onTouchStart : function() {
+			  //Do something when you touch the slide
+			  alert('OMG you touch the slide!') 
+			}
 		}
-	})
+	})*/
 	
 	// JavaScript For Ratings
 	$(document).ready(function() {
@@ -64,6 +69,20 @@ function createMyBookScreen()
 			 
     	});*/
 	});
+	
+	$(function(){
+		var mySwiper = $('.swiper-scroll-container').swiper({
+		scrollContainer : true,
+		scrollbar : {
+			container : '.swiper-scrollbar'	,
+			mode:'horizontal',
+			hide: false,
+			onTouchStart : function() {
+			  //Do something when you touch the slide
+			  console.log('OMG you touch the slide!') 
+			}
+		}});
+	})
 	  
 	
    // $("#formCont").append("<img style='margin:5px;' onClick='onBookClick()' src='assets/business.jpg'/>");

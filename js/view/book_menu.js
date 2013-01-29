@@ -42,7 +42,11 @@ function createBookMenu()
 		scrollbar: {
 			container :'.sb5',
 			hide: true,
-			draggable: true	
+			draggable: true,
+			 onTouchStart : function() {
+			  //Do something when you touch the slide
+			  console.log('OMG you touch the slide!') 
+			}
 		}
 	})
 	
