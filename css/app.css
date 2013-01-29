@@ -1,6 +1,7 @@
 #mainContainer
 {
 	background:url(../assets/images/theme1/bg.jpg) repeat top left;
+	min-height:650px;
 }
 
 #appContainer{
@@ -28,8 +29,7 @@
 	width: 486px;
 	height: 62px;
 	color: black;
-	float: left;
-	
+	float: left;	
 }
 .menuIcon{
 	width:65px;
